@@ -15,9 +15,9 @@ public class Question
     
     public Guid? ScreenshotId { get; set; }
     
-    public List<Answer> Answers { get; set; } = [];
+    public List<Solution> Solutions { get; set; } = [];
     
-    public Answer? TopRatedAnswer { get; set; }
+    public Solution? TopRatedSolution { get; set; }
     
     public List<Guid> Tags { get; set; } = [];
 }

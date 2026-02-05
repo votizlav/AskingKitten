@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace AskingKitten.Entities.Questions;
 
-public class Answer
+public class Solution
 {
-    // public Answer(Guid userId, string text, Question question)
+    // public Solution(Guid userId, string text, Question question)
     // {
     //     UserId = userId; 
     //     Text = text;
