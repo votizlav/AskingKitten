@@ -7,6 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AskingKitten.Contracts\AskingKitten.Contracts.csproj" />
+      <ProjectReference Include="..\AskingKitten.Entities\AskingKitten.Entities.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.9" />
       <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.1.0" />
     </ItemGroup>
 
