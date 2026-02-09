@@ -5,13 +5,6 @@ namespace AskingKitten.Entities.Questions;
 
 public class Solution
 {
-    // public Solution(Guid userId, string text, Question question)
-    // {
-    //     UserId = userId; 
-    //     Text = text;
-    //     Question = question;
-    // } 
-    
     public required Guid Id { get; set; }
     
     public required Guid UserId { get; set; }

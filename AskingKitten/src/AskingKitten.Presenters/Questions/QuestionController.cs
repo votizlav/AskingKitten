@@ -1,16 +1,27 @@
+using AskingKitten.Application.Questions;
+using AskingKitten.Contracts.Questions;
 using Microsoft.AspNetCore.Mvc;
-using AskingKitten.Contracts;
-namespace AskingKitten.Presenters;
+
+namespace AskingKitten.Presenters.Questions;
 
 [ApiController]
 [Route("[controller]")]
-public class SolutionsController : ControllerBase
+public class QuestionController : ControllerBase
 {
+    private readonly IQuestionsService _questionsService;
+    
+    public QuestionController(IQuestionsService questionsService)
+    {
+        _questionsService = questionsService;
+    }
+    
     [HttpPost]
     public async Task<IActionResult> Create(
-        [FromBody] CreateQuestionDto request)
+        [FromBody] CreateQuestionDto questionDto, 
+        CancellationToken cancellationToken)
     {
-        return Ok("Question created successfully"); 
+        var questionId = await _questionsService.Create(questionDto, cancellationToken);
+        return Ok($"Question {questionId} created successfully"); 
     }
     [HttpGet]
     public async Task<IActionResult> Get(
