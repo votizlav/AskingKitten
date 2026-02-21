@@ -6,8 +6,8 @@ root = true
 insert_final_newline = false
 indent_style = space
 indent_size = 4
-charset = utf-8
-end_of_line = lf
+charset = utf-8-bom
+end_of_line = crlf
 trim_trailing_whitespace = false
 
 # Microsoft .NET properties
@@ -292,3 +292,14 @@ dotnet_naming_symbols.private_static_fields.required_modifiers = static
 
 dotnet_naming_style.underscore_prefix_style.capitalization = camel_case
 dotnet_naming_style.underscore_prefix_style.required_prefix = _
+
+# Enforce PascalCase for types (override any external rule)
+dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
+dotnet_naming_symbols.types.applicable_accessibilities = *
+dotnet_naming_symbols.types.required_modifiers =
+
+dotnet_naming_style.types_pascal_case.capitalization = pascal_case
+
+dotnet_naming_rule.types_should_be_pascal_case.symbols = types
+dotnet_naming_rule.types_should_be_pascal_case.style = types_pascal_case
+dotnet_naming_rule.types_should_be_pascal_case.severity = warning

@@ -1,24 +1,28 @@
-using FluentValidation;
-using Microsoft.Extensions.DependencyInjection;
 using AskingKitten.Application;
+using AskingKitten.Infrastructure.ElasticSearch;
+using AskingKitten.Infrastructure.Postgresql;
 
 namespace AskingKitten.Web;
 
 public static class DependencyInjection
 {
-    extension(IServiceCollection services)
+    public static IServiceCollection AddProgramDependencies(
+        this IServiceCollection services,
+        IConfiguration configuration)
     {
-        public IServiceCollection AddProgramDependencies() =>
-            services
-                .AddWebDependencies()
-                .AddApplication();
+        services
+            .AddWebDependencies()
+            .AddApplication()
+            .AddPostgresInfrastructure()
+            .AddElasticSearchInfrastructure();
+        return services;
+    }
 
-        private IServiceCollection AddWebDependencies()
-        {
-            services.AddControllers();
-            services.AddOpenApi();
-        
-            return services;
-        }
+    public static IServiceCollection AddWebDependencies(this IServiceCollection services)
+    {
+        services.AddControllers();
+        services.AddOpenApi();
+
+        return services;
     }
 }

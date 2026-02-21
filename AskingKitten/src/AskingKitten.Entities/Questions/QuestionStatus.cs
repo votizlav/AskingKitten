@@ -3,12 +3,12 @@ namespace AskingKitten.Entities.Questions;
 public enum QuestionStatus
 {
     /// <summary>
-    /// Status is Open
+    /// Status is Open.
     /// </summary>
     OPEN,
-    
+
     /// <summary>
-    /// Status is Resolved
+    /// Status is Resolved.
     /// </summary>
     RESOLVED,
 }

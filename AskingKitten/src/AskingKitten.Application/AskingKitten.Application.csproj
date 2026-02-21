@@ -9,6 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\AskingKitten.Contracts\AskingKitten.Contracts.csproj" />
       <ProjectReference Include="..\AskingKitten.Entities\AskingKitten.Entities.csproj" />
+      <ProjectReference Include="..\Shared\Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -16,7 +17,19 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Analyzer" Version="1.0.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+      <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="5.3.0-2.final">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Comments\" />
+      <ProjectReference Include="..\AskingKitten.Application\AskingKitten.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -15,6 +15,7 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="AWSSDK.S3" Version="4.0.18.4" />
       <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="5.3.0-2.final">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
